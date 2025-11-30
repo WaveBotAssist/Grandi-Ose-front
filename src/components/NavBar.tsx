@@ -35,7 +35,7 @@ export default function Header() {
 
         {/* Liens desktop */}
         <nav className="hidden md:flex gap-6 text-lg">
-          <Link href="/" className={linkClass("/accueil")}>
+          <Link href="/" className={linkClass("/")}>
             Accueil
           </Link>
           <Link href="/about" className={linkClass("/about")}>
@@ -62,8 +62,8 @@ export default function Header() {
       {menuOpen && (
         <div className="md:hidden bg-emerald-800 px-6 py-4 flex flex-col gap-4">
           <Link
-            href="/accueil"
-            className={linkClass("/accueil")}
+            href="/"
+            className={linkClass("/")}
             onClick={() => setMenuOpen(false)}
           >
             Accueil
