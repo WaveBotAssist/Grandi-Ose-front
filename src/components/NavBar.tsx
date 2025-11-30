@@ -6,7 +6,7 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 
 export default function Header() {
-  const logo = "/grandiOse.jpg"
+  const logo = "/grandiose.jpg"
   const [menuOpen, setMenuOpen] = useState(false)
   //pathname = "/accueil" "about" etc..
   const pathname = usePathname()
@@ -35,7 +35,7 @@ export default function Header() {
 
         {/* Liens desktop */}
         <nav className="hidden md:flex gap-6 text-lg">
-          <Link href="/accueil" className={linkClass("/accueil")}>
+          <Link href="/" className={linkClass("/accueil")}>
             Accueil
           </Link>
           <Link href="/about" className={linkClass("/about")}>

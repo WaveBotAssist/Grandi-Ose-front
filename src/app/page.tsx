@@ -65,7 +65,7 @@ export default function Accueil() {
           <div className="flex flex-col md:flex-row md:justify-around md:items-center p-6">
 
             <Image
-              src="/grandiOse.jpg"
+              src="/grandiose.jpg"
               alt="Logo Grandi’Ose"
               width={150}
               height={150}
