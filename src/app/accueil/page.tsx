@@ -17,7 +17,7 @@ export default function Accueil() {
               width={300}
               height={300}
               className="rounded-full border-emerald-900 shadow-lg object-cover"
-               style={{ width: 'auto', height: 'auto' }} // ✅ Maintient le ratio
+              style={{ width: 'auto', height: 'auto' }} // ✅ Maintient le ratio
             />
           </div>
           <div>
@@ -62,53 +62,53 @@ export default function Accueil() {
       {/* Services */}
       <section className="bg-gray-50 py-6">
         <div className="max-w-7xl mx-auto px-2">
-            <div className="flex flex-col md:flex-row md:justify-around md:items-center p-6">
+          <div className="flex flex-col md:flex-row md:justify-around md:items-center p-6">
 
-              <Image
-                src="/grandiOse.jpg"
-                alt="Logo Grandi’Ose"
-                width={150}
-                height={150}
-                className="rounded-full mx-auto md:mx-0"
-                style={{ width: 'auto', height: 'auto' }} // ✅ Maintient le ratio
-              />
+            <Image
+              src="/grandiOse.jpg"
+              alt="Logo Grandi’Ose"
+              width={150}
+              height={150}
+              className="rounded-full mx-auto md:mx-0"
+              style={{ width: 'auto', height: 'auto' }} // ✅ Maintient le ratio
+            />
 
-              <div className="text-center flex flex-col space-y-4 m-5">
-                <div>
-                  <FontAwesomeIcon icon={faPhone} className="text-emerald-700 text-xl" />
-                </div>
-                <strong className="text-3xl">Téléphone :</strong>
-                <a
-                  href="tel:+32497241353"
-                  className="text-emerald-700 hover:underline"
-                >
-                  0497 24 13 53
-                </a>
+            <div className="text-center flex flex-col space-y-4 m-5">
+              <div>
+                <FontAwesomeIcon icon={faPhone} className="text-emerald-700 text-xl" />
               </div>
-
-              <div className="text-center flex flex-col space-y-4 m-5">
-                <div>
-                  <FontAwesomeIcon icon={faMapMarkerAlt} className="text-emerald-700 text-xl" />
-                </div>
-                <strong className="text-3xl">Adresse :</strong>
-                Boulevard Allende n 46/3
-                <br />
-                 6140 fontaine l'éveques
-              </div>
-
-              <div className="text-center flex flex-col space-y-4 m-5">
-                <div>
-                  <FontAwesomeIcon icon={faEnvelope} className="text-emerald-700 text-xl" />
-                </div>
-                <strong className="text-3xl">Email :</strong>
-                <a
-                  href="mailto:grandi-ose@outlook.com"
-                  className="text-emerald-700 hover:underline"
-                >
-                  grandi-ose@outlook.com
-                </a>
-              </div>
+              <strong className="text-3xl">Téléphone :</strong>
+              <a
+                href="tel:+32497241353"
+                className="text-emerald-700 hover:underline"
+              >
+                0497 24 13 53
+              </a>
             </div>
+
+            <div className="text-center flex flex-col space-y-4 m-5">
+              <div>
+                <FontAwesomeIcon icon={faMapMarkerAlt} className="text-emerald-700 text-xl" />
+              </div>
+              <strong className="text-3xl">Adresse :</strong>
+              Boulevard Allende n 46/3
+              <br />
+              6140 Fontaine-l’Évêque
+            </div>
+
+            <div className="text-center flex flex-col space-y-4 m-5">
+              <div>
+                <FontAwesomeIcon icon={faEnvelope} className="text-emerald-700 text-xl" />
+              </div>
+              <strong className="text-3xl">Email :</strong>
+              <a
+                href="mailto:grandi-ose@outlook.com"
+                className="text-emerald-700 hover:underline"
+              >
+                grandi-ose@outlook.com
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
