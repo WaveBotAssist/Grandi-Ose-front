@@ -143,7 +143,7 @@ export default function About() {
               <strong className="text-3xl">Adresse :</strong>
               Boulevard Allende n 46/3
               <br />
-              6140 fontaine l'éveques
+              6140 Fontaine-l’Évêque
             </div>
 
             <div className="text-center flex flex-col space-y-4 m-5">
