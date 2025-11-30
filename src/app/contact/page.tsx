@@ -5,7 +5,7 @@ import { useState } from "react";
 import { sendEmail } from "@/app/actions/sendEmail";
 
 
-function ModalMerci({ onClose }) {
+function ModalMerci({ onClose }: { onClose: () => void }) {
   return (
     <div
       className="
@@ -47,10 +47,10 @@ export default function Contact() {
   const [status, setStatus] = useState("");
   const [loadingSubmit, setLoadingSubmit] = useState(false)
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoadingSubmit(true)
-    const form = new FormData(e.target);
+    const form = new FormData(e.target as HTMLFormElement);
 
     const res = await sendEmail({
       name: form.get("name"),
@@ -59,7 +59,9 @@ export default function Contact() {
     });
 
     setStatus(res.success ? "Message envoyé !" : "Erreur d’envoi");
-    if (res.success) e.target.reset();
+    if (res.success) {
+      (e.target as HTMLFormElement).reset(); // ✔ reset reconnu
+    }
     setLoadingSubmit(false)
   }
 
