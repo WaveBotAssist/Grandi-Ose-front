@@ -4,12 +4,52 @@ import Image from "next/image";
 import { useState } from "react";
 import { sendEmail } from "@/app/actions/sendEmail";
 
+
+function ModalMerci({ onClose }) {
+  return (
+    <div
+      className="
+        fixed inset-0 bg-black/50 flex items-center justify-center
+        animate-fadeIn z-50
+      "
+    >
+      <div
+        className="
+          bg-white rounded-xl shadow-xl p-8 w-11/12 max-w-md text-center
+          animate-zoomIn
+        "
+      >
+        <h2 className="text-2xl font-bold text-emerald-900 mb-4">
+          Merci !
+        </h2>
+
+        <p className="text-gray-700 mb-6">
+          Votre message a bien été envoyé. Vous serez recontacté très bientôt !
+        </p>
+
+        <button
+          onClick={onClose}
+          className="
+            bg-emerald-900 text-white px-6 py-2 rounded-lg 
+            hover:bg-emerald-700 transition
+          "
+        >
+          OK
+        </button>
+      </div>
+    </div>
+  );
+}
+
+
+
 export default function Contact() {
   const [status, setStatus] = useState("");
+  const [loadingSubmit, setLoadingSubmit] = useState(false)
 
   async function handleSubmit(e) {
     e.preventDefault();
-
+    setLoadingSubmit(true)
     const form = new FormData(e.target);
 
     const res = await sendEmail({
@@ -20,12 +60,16 @@ export default function Contact() {
 
     setStatus(res.success ? "Message envoyé !" : "Erreur d’envoi");
     if (res.success) e.target.reset();
+    setLoadingSubmit(false)
   }
 
 
-  
+
   return (
     <div className="min-h-screen flex flex-col bg-white text-gray-800">
+      {status === "Message envoyé !" && (
+        <ModalMerci onClose={() => setStatus("")} />
+      )}
       {/* Hero image */}
       <section className="relative w-full h-64 md:h-80">
         <Image
@@ -90,9 +134,9 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="bg-emerald-900 text-white px-6 py-3 rounded-lg shadow hover:bg-emerald-700 transition"
+              className="h-12 w-70 bg-emerald-900 text-white px-6 py-3 rounded-lg shadow hover:bg-emerald-700 transition"
             >
-              Envoyer le formulaire
+              {!loadingSubmit ? 'Envoyer le formulaire' : "Envoi en cours…"}
             </button>
           </form>
         </div>
